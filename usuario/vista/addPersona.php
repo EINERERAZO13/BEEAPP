@@ -7,18 +7,18 @@ require_once("../../template/PlantillaFormulario.php");
   
       volver</a></button>*/
 ?>
-<br/>
-<center><h2>REGISTRO PARA EMPRESAS</h2></center>
+
+<center><h2>REGISTRO PARA PERSONAS NATURALES</h2></center>
 <div class="formulario">
-<form action="../Controlador/addEmpresa.php" method="POST">
+<form action="../Controlador/addPersona.php" method="POST">
   <div class="mb-3">
-    <label>NIT: </label>
-    <input type="text" class="form-control" name="nit" placeholder="Digite aqui la identificacion de la empresa">
+    <label>Nombres y Apellidos: </label>
+    <input type="text" class="form-control" name="nombres_apellidos" placeholder="Ingrese aqui sus nombres y apellidos completos">
   </div>
 
   <div class="mb-3">
-    <label>Razon Social: </label>
-    <input type="text" class="form-control" name="razon_social" placeholder="Ingrese aqui en nombre de la empresa">
+    <label>Documento de identidad: </label>
+    <input type="text" class="form-control" name="identidad" placeholder="Escriba aqui el numero de su documento de identidad">
   </div>
 
   <div class="mb-3">
@@ -31,12 +31,7 @@ require_once("../../template/PlantillaFormulario.php");
     <input type="text" class="form-control" name="password" aria-describedby="emailHelp">
   </div>
 
-  <div class="mb-3">
-    <label>Ubicacion: </label>
-    <input type="text" class="form-control" name="ubicacion" aria-describedby="emailHelp">
-  </div>
-
-  <div class="mb-3">
+   <div class="mb-3">
     <label>Contactos: </label>
     <input type="text" class="form-control" name="contactos" aria-describedby="emailHelp">
   </div>

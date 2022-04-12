@@ -1,7 +1,7 @@
 <?php 
    require_once("../../conexion/conexion.php");
 session_start();
-   class empresa extends conexion {
+   class Persona extends conexion {
 
 
         public function __construct()
@@ -9,9 +9,9 @@ session_start();
             $this->db = parent::__construct();            
         }    
 
-        //LOGIN EMPRESA
-        public function loginEmpresa ($email, $password){
-            $tabla = $this->db->prepare("SELECT email, password FROM empresa
+        //LOGIN PERSONA
+        public function loginPersona ($email, $password){
+            $tabla = $this->db->prepare("SELECT email, password FROM persona
              WHERE email = :email AND password = :password");
              $tabla->bindParam(':email',$email);
              $tabla->bindParam(':password',$password);
@@ -29,34 +29,35 @@ session_start();
 
             
 
-         //REGISTRO EMPRESA
-         public function insertarUsuarioEmpresa($nit, $razon_social, $email, $password, $ubicacion, $contactos){
+         //REGISTRO PERSONA
+         public function insertarUsuarioPersona($nombres_apellidos, $identidad, $email, $password, $contactos){
             //prepare prepara la consulta SQL enviada ->Insert Into
-            $tabla = $this->db->prepare("INSERT INTO empresa(nit, razon_social, email, password, ubicacion, contactos) 
-            VALUE(:nit, :razon_social, :email, :password, :ubicacion, :contactos)");
-            $tabla->bindParam(':nit', $nit);
-            $tabla->bindParam(':razon_social', $razon_social);
+            $tabla = $this->db->prepare("INSERT INTO persona(nombres_apellidos, identidad, email, password, contactos) 
+            VALUE(:nombres_apellidos, :identidad, :email, :password, :contactos)");
+            $tabla->bindParam(':nombres_apellidos', $nombres_apellidos);
+            $tabla->bindParam(':identidad', $identidad);
             $tabla->bindParam(':email', $email);
             $tabla->bindParam(':password', $password);
-            $tabla->bindParam(':ubicacion', $ubicacion);
             $tabla->bindParam(':contactos', $contactos);
             
             
             if ($tabla->execute()){
-                echo "<h1>Registro de usuario satisfactorio.. </h1>";
-                header('refresh:3; url=../vista/addEmpresa.php');
+                echo "<h1>tu registro como persona natural fue exitoso.. </h1>";
+                echo "<br>";
+                echo "<h1>El equipo BEEAPP te da la bienvenida.. </h1>";
+                header('refresh:10; url=../../index.php');
             }else{
-                echo " Fallaste al Registrarte Prro, Intenta de nuevo!!";
-                header('refresh:2; url=../../Index.php');
+                echo " Tu registro no fue posible, Intenta de nuevo!!";
+                header('refresh:2; url=../vista/addPersona.php');
             }
         }
 
 
 
-        //VER UN USUARIO EMPRESA
+        //VER UN USUARIO PERSONA
         public function getIdrUsuario($id){
             $rows = null;
-            $tabla = $this->db->prepare("SELECT id, nit, razon_social, ubicacion, contactos, fecha_nacimiento FROM empresa WHERE id = :id");
+            $tabla = $this->db->prepare("SELECT id, nombres_apellidos, identidad, email, contactos FROM persona WHERE id = :id");
             $tabla->bindParam(':id',$id);
             $tabla->execute();
             while ($result = $tabla->fetch()) {

@@ -8,7 +8,7 @@ require_once("../../template/PlantillaFormulario.php");
       volver</a></button>*/
 ?>
 
-  
+<center><h2>REGISTRO PARA APICULTORES</h2></center>
 <div class="formulario">
 <form action="../Controlador/addApicultor.php" method="POST">
   <div class="mb-3">

@@ -14,7 +14,7 @@ require_once("template/Plantillaindex.php");
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
             
-              <a href="#" class="nav-link text-secondary">
+              <a href="#" class="nav-link text-white">
               <i class="bi bi-house-fill"></i><use xlink:href="index.php"></use></i>
                 Inicio
               </a>
@@ -43,40 +43,37 @@ require_once("template/Plantillaindex.php");
                 Clientes
               </a>
             </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="px-3 py-2 border-bottom mb-3">
-      <div class="container d-flex flex-wrap justify-content-center">
-        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
-          <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
-        </form>       
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
             REGISTRASE
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="usuario/vista/addApicultor.php">Como Apicultor</a></li>
             <li><a class="dropdown-item" href="usuario/vista/addEmpresa.php">Como Empresa</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Como Persona natural</a></li>
+            <li><a class="dropdown-item" href="usuario/vista/addPersona.php">Como persona natural</a></li>
           </ul>
         </li>
-        <div class="text-end">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             INICIAR SESION
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="usuario/vista/loginApicultor.php">Como Apicultor</a></li>
             <li><a class="dropdown-item" href="usuario/vista/addEmpresa.php">Como Empresa</a></li>
-            <li><a class="dropdown-item" href="usuario/vista/addEmpresa.php">Como persona natural</a></li>
+            <li><a class="dropdown-item" href="usuario/vista/addEmpresa.php">Como Persona natural</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Como administrador</a></li>
+            <li><a class="dropdown-item" href="#">Como Administrador</a></li>
           </ul>
         </li>
-        <div class="text-end">
+        </ul>
+       
+            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
+            <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+            </form>                  
+            </div>
         </div>
       </div>
     </div>
+    
+      
+    
   </header>
   
