@@ -11,52 +11,48 @@
     <title>Hoteleria y turismo Popayán 2022</title>
   </head>
   <body>
-    <h1>BIENVENIDOS APRENDISES ADSI 2338368!</h1>
-    <!-- Barra de navegacion del administrador -->
+    <h1>Bienvenidos aprendices ADSI 2338368</h1>
+    
+    <!-- Barra de navegacion del Administrador -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="IMG/logo.png" width="150" height="150" alt="Hotel y restaurante popayan"></a>
+    <a class="navbar-brand" href="#"><img src="img/logo.png" width="60" height="60" alt="Hotel y Restaurante P"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Sitio</a>
+          <a class="nav-link active" aria-current="page" href="#">Ver mi perfil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Servicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
+          <a class="nav-link" href="../vista/index.php">Ver usuarios</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            VER USUARIOS
+            Hacer reserva
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="listaApicultor.php">Ver Apicultores</a></li>
-            <li><a class="dropdown-item" href="listaEmpresa.php">Ver Empresas</a></li>
-            <li><a class="dropdown-item" href="">Ver Personas Naturales</a></li>
+            <li><a class="dropdown-item" href="#">Iniciar reserva</a></li>
+            <li><a class="dropdown-item" href="#">Modificar reserva</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Ver Administradores</a></li>
+            <li><a class="dropdown-item" href="#">Eliminar reserva</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Registrar</a>
+          <a class="nav-link disabled">Historial</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Iniciar sesion</a>
+          <a class="nav-link disabled">Salir</a>
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar por id" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">BUSCAR</button>
+        <input class="form-control me-2" type="search" placeholder="Buscar por Id" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
     </div>
   </div>
 </nav>
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -69,9 +65,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
   </body>
-
-</footer>
-<center>Copiringht 2022 version 1.1 Einer Erazo</center>
-  </body>
+  <!-- pie de pagina-->
+  
 </html>
-

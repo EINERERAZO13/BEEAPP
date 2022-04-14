@@ -54,17 +54,15 @@ session_start();
 
 
         //VER UN USUARIO EMPRESA
-        public function getIdrUsuario($id){
-            $rows = null;
-            $tabla = $this->db->prepare("SELECT id, nit, razon_social, ubicacion, contactos, fecha_nacimiento FROM empresa WHERE id = :id");
-            $tabla->bindParam(':id',$id);
+        public function getempresa(){
+            $rows = Null;
+            $tabla = $this->db->prepare("SELECT id, nit, razon_social, email, password, ubicacion, contactos FROM empresa");
             $tabla->execute();
             while ($result = $tabla->fetch()) {
-                $rows[] = $result;
+            $rows[] = $result;
             }
             return $rows;
-           
-        }
+            }
    } //fin de la clase 
 
    

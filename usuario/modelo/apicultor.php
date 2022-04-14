@@ -1,6 +1,6 @@
 <?php 
    require_once("../../conexion/conexion.php");
-session_start();
+   session_start();
    class apicultor extends conexion {
 
 
@@ -50,44 +50,19 @@ session_start();
             }
         }
 
-         //REGISTRO EMPRESA
-         public function insertarUsuarioEmpresa($nit, $razon_social, $email, $password, $ubicacion, $contactos){
-            //prepare prepara la consulta SQL enviada ->Insert Into
-            $tabla = $this->db->prepare("INSERT INTO empresa(nit, email, password, ubicacion, contactos) 
-            VALUE(:nombres_apellidos, :identidad, :password, :ubicacion, :contactos)");
-            $tabla->bindParam(':nombres_apellidos', $nit);
-            $tabla->bindParam(':identidad', $email);
-            $tabla->bindParam(':password', $password);
-            $tabla->bindParam(':ubicacion', $ubicacion);
-            $tabla->bindParam(':contactos', $contactos);
-            
-            
-            if ($tabla->execute()){
-                echo "<h1>Registro de usuario satisfactorio.. </h1>";
-                header('refresh:3; url=../vista/add.php');
-            }else{
-                echo " Fallaste al Registrarte Prro, Intenta de nuevo!!";
-                header('refresh:2; url=../../Index.php');
-            }
-        }
-
-
-
-        //VER UN USUARIO APICULTOR
-        public function getIdrUsuario($id){
-            $rows = null;
-            $tabla = $this->db->prepare("SELECT id, nombres_epellidos, identidad, ubicacion, contactos, fecha_nacimiento FROM apicultor WHERE id = :id");
-            $tabla->bindParam(':id',$id);
+            //VER TODOS LOS APICULORES
+        public function getapicultor(){
+            $rows = Null;
+            $tabla = $this->db->prepare("SELECT id, nombre, identidad, password, ubicacion, contactos, fecha_nacimiento FROM apicultor");
             $tabla->execute();
             while ($result = $tabla->fetch()) {
-                $rows[] = $result;
+            $rows[] = $result;
             }
             return $rows;
-           
-        }
-   } //fin de la clase 
+            }
+
+    } //fin de la clase 
 
    
    
-
-?>
+    ?>

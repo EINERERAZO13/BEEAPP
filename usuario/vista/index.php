@@ -1,7 +1,7 @@
 <?php 
     require_once("../modelo/apicultor.php");
-    require_once("../../template/plantillaperfilUsuario.php");
-    $modeloUsuario = new apicultor();
+    require_once("../../template/plantillaFormulario.php");
+    $modeloapicultor = new apicultor();
 ?>
 
 <h3>Listado de usuarios </h3>
@@ -10,25 +10,26 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Direccion</th>
-      <th scope="col">Email</th>
+      <th scope="col">Nombres y Apellidos</th>
+      <th scope="col">identidad</th>
+      <th scope="col">ubicacion</th>
+      <th scope="col">fecha de nacimiento</th>
       <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
-      <?php 
-        $verUsuarios = $modeloUsuario->getUsuarios();
-        foreach ($verUsuarios as $listarUsuario) {
-       ?>
+  <?php 
+  $verapicultores = $modeloapicultor->getapicultor();
+  foreach ($verapicultores as $listarapicultor) {
+  ?>
             <tr>
-                <th scope="row"><?= $listarUsuario['id'];?></th>
-                <td><?= $listarUsuario['nombre'];?></td>
+                <th scope="row"><?= $listarapicultor['id_apicultor'];?></th>
+                <td><?= $listarapicultor['nombre_apellidos'];?></td>
                 <td>Otto</td>
                 <td>@mdo</td>
                 <td>
-                  <a href="update.php?=id<?= $listarUsuario['id'];?>" class="btn btn-warning">Editar</a>
-                  <a href="delete.php=id<?= $listarUsuario['id']?>" class="btn btn-danger">Eliminar</a>
+                  <a href="update.php?=id<?= $listarapicultor['id_apicultor'];?>" class="btn btn-warning">Editar</a>
+                  <a href="delete.php=id<?= $listarapicultor['id_apicultor']?>" class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
         <?php
@@ -36,6 +37,7 @@
         }
          
         ?>
+   
    
   </tbody>
 </table>

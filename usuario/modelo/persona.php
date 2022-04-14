@@ -55,7 +55,7 @@ session_start();
 
 
         //VER UN USUARIO PERSONA
-        public function getIdrUsuario($id){
+        public function getIdrUsuario(){
             $rows = null;
             $tabla = $this->db->prepare("SELECT id, nombres_apellidos, identidad, email, contactos FROM persona WHERE id = :id");
             $tabla->bindParam(':id',$id);
