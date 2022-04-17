@@ -5,10 +5,10 @@ require_once("../../template/PlantillaFormulario.php")
 ?>
 <div class="formulario">
 
-<form action="../controlador/loginapicultor.php"method="POST">
+<form action="../controlador/loginadministrador.php"method="POST">
     <div class="mb-3">
-        <label >Documento de identidad: </label>
-        <input type="text" class="form-control" name="email" placeholder="Digite aqui el numero de su documento de identidad" aria-describedby="emailHelp">
+        <label >Correo electronico: </label>
+        <input type="text" class="form-control" name="email" placeholder="Digite aqui el correo electronico" aria-describedby="emailHelp">
         
     </div>
     

@@ -4,6 +4,11 @@
     $modeloempresa = new empresa();
 ?>
   <br>
+  <form>
+    <a href="perfiladministrador.php">
+    <button type="button" class="btn btn-warning" href="perfiladministrador.php"  >VOLVER</button>
+    </a>
+</form>
       
       <center><h2>LISTADO DE EMPRESAS </h2></center>
       <br>

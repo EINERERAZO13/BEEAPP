@@ -13,7 +13,7 @@ require_once("../../template/PlantillaFormulario.php");
 <form action="../Controlador/addPersona.php" method="POST">
   <div class="mb-3">
     <label>Nombres y Apellidos: </label>
-    <input type="text" class="form-control" name="nombres_apellidos" placeholder="Ingrese aqui sus nombres y apellidos completos">
+    <input type="text" class="form-control" name="nombre" placeholder="Ingrese aqui sus nombres y apellidos completos">
   </div>
 
   <div class="mb-3">

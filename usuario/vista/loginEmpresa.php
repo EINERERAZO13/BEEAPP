@@ -15,7 +15,7 @@ require_once("../../template/PlantillaFormulario.php")
    
     <div class="mb-3">
         <label >Contraseña</label>
-        <input type="password" class="form-control" name="contraseña" placeholder="Ingrese aqui su contraseña"  aria-describedby="emailHelp">
+        <input type="password" class="form-control" name="password" placeholder="Ingrese aqui su contraseña"  aria-describedby="emailHelp">
         
     </div>
     

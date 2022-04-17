@@ -3,11 +3,15 @@
 require_once("../../template/PlantillaFormulario.php")
 
 ?>
+<br>
+      
+      <center><h2>INGRESAR COMO PERSONA NATURAL </h2></center>
+      <br>
 <div class="formulario">
 
-<form action="../controlador/loginapicultor.php"method="POST">
+<form action="../controlador/login.php"method="POST">
     <div class="mb-3">
-        <label >Documento de identidad: </label>
+        <label >Correo Electronico: </label>
         <input type="text" class="form-control" name="email" placeholder="Digite aqui el numero de su documento de identidad" aria-describedby="emailHelp">
         
     </div>

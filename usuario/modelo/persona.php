@@ -30,11 +30,11 @@ session_start();
             
 
          //REGISTRO PERSONA
-         public function insertarUsuarioPersona($nombres_apellidos, $identidad, $email, $password, $contactos){
+         public function insertarUsuarioPersona($nombre, $identidad, $email, $password, $contactos){
             //prepare prepara la consulta SQL enviada ->Insert Into
-            $tabla = $this->db->prepare("INSERT INTO persona(nombres_apellidos, identidad, email, password, contactos) 
-            VALUE(:nombres_apellidos, :identidad, :email, :password, :contactos)");
-            $tabla->bindParam(':nombres_apellidos', $nombres_apellidos);
+            $tabla = $this->db->prepare("INSERT INTO persona(nombre, identidad, email, password, contactos) 
+            VALUE(:nombre, :identidad, :email, :password, :contactos)");
+            $tabla->bindParam(':nombre', $nombre);
             $tabla->bindParam(':identidad', $identidad);
             $tabla->bindParam(':email', $email);
             $tabla->bindParam(':password', $password);
@@ -53,20 +53,17 @@ session_start();
         }
 
 
-
-        //VER UN USUARIO PERSONA
-        public function getIdrUsuario(){
-            $rows = null;
-            $tabla = $this->db->prepare("SELECT id, nombres_apellidos, identidad, email, contactos FROM persona WHERE id = :id");
-            $tabla->bindParam(':id',$id);
+        public function getpersona(){
+            $rows = Null;
+            $tabla = $this->db->prepare("SELECT id, nombre, identidad, email, password, contactos FROM persona");
             $tabla->execute();
             while ($result = $tabla->fetch()) {
-                $rows[] = $result;
+            $rows[] = $result;
             }
             return $rows;
-           
-        }
+            }
    } //fin de la clase 
+
 
    
    

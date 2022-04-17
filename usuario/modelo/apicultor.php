@@ -9,30 +9,30 @@
             $this->db = parent::__construct();            
         }    
 
-        //LOGIN APICULTOR
-        public function login ($identidad, $password){
-            $tabla = $this->db->prepare("SELECT identidad, password FROM apicultor
-             WHERE identidad = :identidad AND password = :password");
-             $tabla->bindParam(':identidad',$identidad);
-             $tabla->bindParam(':password',$password);
-             $tabla->execute();
-             //rowCount busca en la tabla una conincidencia si la encontro = 1    
-             if ($tabla->rowCount()==1) {
-                 $loginUsuario = $tabla->fetch();
-                $_SESSION['identidad'] = $loginUsuario['identidad'];
-                echo "inicio de sesion satisfactorio!!";
-                          
-             }else {
-                 echo "Fallo al iniciar sesion verifique sus datos";
-             }
-        }
+       //LOGIN APICULTOR
+       public function login ($identidad, $password){
+        $tabla = $this->db->prepare("SELECT identidad, password FROM apicultor
+         WHERE identidad = :identidad AND password = :password");
+         $tabla->bindParam(':identidad',$identidad);
+         $tabla->bindParam(':password',$password);
+         $tabla->execute();
+         //rowCount busca en la tabla una conincidencia si la encontro = 1    
+         if ($tabla->rowCount()==1) {
+             $loginUsuario = $tabla->fetch();
+            $_SESSION['email'] = $loginUsuario['email'];
+            echo "inicio de sesion satisfactorio!!";
+                      
+         }else {
+             echo "Fallo al iniciar sesion verifique sus datos";
+         }
+    }
 
             //REGISTRO APICULTOR
-        public function insertarUsuario($nombres_apellidos, $identidad, $password, $ubicacion, $contactos, $fecha_nacimiento){
+        public function insertarUsuario($nombre, $identidad, $password, $ubicacion, $contactos, $fecha_nacimiento){
             //prepare prepara la consulta SQL enviada ->Insert Into
-            $tabla = $this->db->prepare("INSERT INTO apicultor(nombres_apellidos, identidad, password, ubicacion, contactos, fecha_nacimiento) 
-            VALUE(:nombres_apellidos, :identidad, :password, :ubicacion, :contactos, :fecha_nacimiento)");
-            $tabla->bindParam(':nombres_apellidos', $nombres_apellidos);
+            $tabla = $this->db->prepare("INSERT INTO apicultor(nombre, identidad, password, ubicacion, contactos, fecha_nacimiento) 
+            VALUE(:nombre, :identidad, :password, :ubicacion, :contactos, :fecha_nacimiento)");
+            $tabla->bindParam(':nombre', $nombre);
             $tabla->bindParam(':identidad', $identidad);
             $tabla->bindParam(':password', $password);
             $tabla->bindParam(':ubicacion', $ubicacion);
